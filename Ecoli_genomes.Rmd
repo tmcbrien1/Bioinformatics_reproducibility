@@ -12,3 +12,14 @@ Here I'm working with the data carpentry ecoli genomes data set. I found it at t
 set.seed(86032591)
 ```
 
+
+Below I am importing the **ecoli data** from our data folder.
+
+```{r Import Data, echo = TRUE, eval = TRUE}
+metadata <- read.csv('data/Ecoli_metadata.csv') # reading in my data file into an object named 'metadata' 
+View(metadata) # looking at the table within R
+?str # get help on str command
+??str # all help pages with str in it
+str(metadata) # want to look at structure of metadata file, but don't want it in my html doc
+mean(metadata$genome_size) # looking at mean genome size in metadata file
+```

@@ -70,6 +70,22 @@ img {
 
 <p>Here I’m working with the data carpentry ecoli genomes data set. I found it at this website: <a href="http://rpubs.com/marschmi/117051" class="uri">http://rpubs.com/marschmi/117051</a></p>
 <pre class="r"><code>set.seed(86032591)</code></pre>
+<p>Below I am importing the <strong>ecoli data</strong> from our data folder.</p>
+<pre class="r"><code>metadata &lt;- read.csv('data/Ecoli_metadata.csv') # reading in my data file into an object named 'metadata' 
+View(metadata) # looking at the table within R
+?str # get help on str command
+??str # all help pages with str in it
+str(metadata) # want to look at structure of metadata file, but don't want it in my html doc</code></pre>
+<pre><code>## 'data.frame':    30 obs. of  7 variables:
+##  $ sample     : Factor w/ 30 levels &quot;CZB152&quot;,&quot;CZB154&quot;,..: 7 6 18 19 20 21 22 23 24 25 ...
+##  $ generation : int  0 2000 5000 10000 15000 20000 20000 20000 25000 25000 ...
+##  $ clade      : Factor w/ 7 levels &quot;(C1,C2)&quot;,&quot;C1&quot;,..: NA 7 7 6 6 1 1 1 2 4 ...
+##  $ strain     : Factor w/ 1 level &quot;REL606&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ cit        : Factor w/ 3 levels &quot;minus&quot;,&quot;plus&quot;,..: 3 3 3 3 3 3 3 3 3 3 ...
+##  $ run        : Factor w/ 30 levels &quot;&quot;,&quot;SRR097977&quot;,..: 1 5 22 23 24 25 26 27 28 29 ...
+##  $ genome_size: num  4.62 4.63 4.6 4.59 4.66 4.63 4.62 4.61 4.65 4.59 ...</code></pre>
+<pre class="r"><code>mean(metadata$genome_size) # looking at mean genome size in metadata file</code></pre>
+<pre><code>## [1] 4.662667</code></pre>
 
 
 </div>
