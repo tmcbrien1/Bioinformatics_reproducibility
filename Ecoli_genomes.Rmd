@@ -17,9 +17,27 @@ Below I am importing the **ecoli data** from our data folder.
 
 ```{r Import Data, echo = TRUE, eval = TRUE}
 metadata <- read.csv('data/Ecoli_metadata.csv') # reading in my data file into an object named 'metadata' 
-View(metadata) # looking at the table within R
+# could use View(metadata) here for looking at the table within R
 ?str # get help on str command
 ??str # all help pages with str in it
-str(metadata) # want to look at structure of metadata file, but don't want it in my html doc
+#could use str(metadata) if you want to look at structure of metadata file, but don't want it in my html doc
 mean(metadata$genome_size) # looking at mean genome size in metadata file
+```
+
+```{r load packages, eval = TRUE}
+#install.packages("ggplot2") #installed package for plotting 
+library("ggplot2") # necessary after installing packages, tells computer to actually be ready to use functions
+#?library
+```
+
+```{r data exploration, echo = TRUE, eval = TRUE, fig.center = TRUE}
+ggplot(metadata, aes(x = genome_size)) + geom_bar(stat = "bin", binwidth=0.01) #create histogram with bins by a genome size of 0.01
+```
+
+Always include session info for reproducible documents!
+
+```{r session info}
+devtools::session_info() #within devtools package, let's load session info. Problem! We haven't installed this package yet so this will lead to an error.
+#install.packages("devtools")
+#library(devtools)
 ```
